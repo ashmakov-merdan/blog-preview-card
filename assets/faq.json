@@ -1,0 +1,18 @@
+[
+  {
+    "title": "What is Frontend Mentor, and how will it help me?",
+    "desc": "Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building."
+  },
+  {
+    "title": "Is Frontend Mentor free?",
+    "desc": " The choice between free and paid resources depends on your learning preferences, budget, and the level of support and structure you desire in your learning journey."
+  },
+  {
+    "title": "Can I use Frontend Mentor projects in my portfolio?",
+    "desc": "Yes, you can use Frontend Mentor projects in your portfolio."
+  },
+  {
+    "title": "How can I get help if I'm stuck on a challenge?",
+    "desc": "You can get help on Frontend Mentor by using the community forum, checking official documentation, reviewing existing solutions, reaching out on social media, participating in online communities, or trying pair programming."
+  }
+]

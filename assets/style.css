@@ -1,98 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --lightPink: hsl(275, 100%, 97%);
+  --grayishPurple: hsl(292, 16%, 49%);
+  --darkPurple: hsl(292, 42%, 14%);
+};
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Figtree", sans-serif;
 }
 
-.container {
-  background-color: gold;
+body {
+  background-color: var(--lightPink);
+  background-image: url("images/background-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  font-family: "Work Sans", sans-serif;
+  overflow: hidden;
+}
+
+main {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .box {
-  border-radius: 16px;
-  padding: 20px;
   margin: 0 auto;
-  max-width: 360px;
-  width: 100%;
+  margin-top: 10rem;
+  padding: 20px 28px;
+  max-width: 400px;
   height: fit-content;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  box-shadow: 16px 16px black;
+  background-color: var(--white);
+  border-radius: 16px;
 }
 
-#image {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.details {
+.heading {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 16px;
 }
 
-#badge {
-  width: fit-content;
-  padding: 8px 10px;
-  font-family: 14px;
+.heading img {
+  width: 28px;
+}
+
+.heading h1 {
+  color: var(--darkPurple);
   font-weight: 900;
-  background-color: gold;
-  border-radius: 6px;
 }
 
-#date {
-  font-family: 14px;
-  font-weight: 500;
-}
-
-#title {
-  font-size: 24px;
-  color: black;
-  transition: color .2s ease-in;
-  cursor: pointer;
-}
-
-#title:hover {
-  color: gold;
-}
-
-#desc {
-  color: grey;
-  font-size: 16px;
-  line-height: 26px;
-  font-weight: 500;
-}
-
-.avatar {
+.accordion-group {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
 }
 
-.avatar img {
-  width: 36px;
-  object-fit: cover;
+.accordion:not(:last-child) {
+  border-bottom: 1px solid var(--lightPink);
 }
 
-.avatar a {
-  text-decoration: none;
-  font-weight: 700;
-  color: black;
-  transition: color .2s ease-in;
+.accordion-btn {
+  padding-block: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  color: var(--darkPurple);
+  transition: background .2s ease-in;
 }
 
-.avatar a:hover {
-  color: gold;
+.accordion-btn span {
+  text-align: start;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color .2s ease;
+}
+
+.active, .accordion-btn:hover {
+  color: rgb(176, 11, 176);
+}
+
+.panel {
+  font-size: 14px;
+  color: var(--grayishPurple);
+  padding-inline: 6px;
+  height: 0px;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+
+@media screen and (max-width: 480px){
+  .box {
+    max-width: 300px;
+    padding: 10px 14px;
+  }
+
+  .accordion-btn {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    background-image: url("images/background-pattern-mobile.svg");
+    background-size: cover;
+  } 
 }
