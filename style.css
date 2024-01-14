@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+  --outfit: "Outfit", sans-serif;
+  --mainDarkBlue: hsl(217, 54%, 11%);
+  --cardDarkBlue: hsl(216, 50%, 16%);
+  --darkBlue: hsl(215, 32%, 27%);
+  --softBlue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--outfit);
+}
+
+body {
+  background: var(--mainDarkBlue);
+  width: 100vw;
+  height: 97vh;
+  overflow: hidden;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  border-radius: 10px;
+  background-color: var(--cardDarkBlue);
+}
+
+.card .photo {
+  position: relative;
+  display: flex;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card .photo img {
+  width: 100%;
+  height: 100%;
+}
+
+.card .photo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--cyan);
+  opacity: 0%;
+  transition: opacity .3s ease;
+}
+
+.card .photo #view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  opacity: 0%;
+  transition: opacity .3s ease;
+}
+
+.card .photo:hover::after {
+  opacity: 30%;
+}
+
+.card .photo:hover #view {
+  opacity: 100%;
+}
+
+.card .photo #view img {
+  width: 40px;
+  height: 40px;
+  opacity: 100%;
+}
+
+.card > h1 {
+  font-size: 20px;
+  color: var(--white);
+}
+
+.card > p {
+  font-weight: 300;
+  color: var(--softBlue);
+}
+
+.card .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card .info #price,
+.card .info #time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card .info #price {
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.card .info #time {
+  font-weight: 300;
+  color: var(--softBlue);
+}
+
+.card #divider {
+  content: "";
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid var(--softBlue);
+  opacity: 30%;
+}
+
+.card .profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+
+.card .profile #avatar {
+  width: 32px;
+  border: 1px solid var(--white);
+  border-radius: 100%;
+}
+
+.card .profile #name {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--softBlue);
+}
+
+.card .profile #name a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.attribution { 
+  font-size: 11px; 
+  text-align: center; 
+  color: var(--white);
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
