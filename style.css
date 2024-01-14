@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --montserrat: "Montserrat", sans-serif;
+  --fraunces: "Fraunces", serif;
+  --darkCyan: hsl(158, 36%, 37%);
+  --veryDarkCyan: hsl(160, 48%, 18%);
+  --cream: hsl(30, 38%, 92%);
+  --darkBlue: hsl(212, 21%, 14%);
+  --grayishBlue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--montserrat);
+}
+
+body {
+  background-color: var(--cream);
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background: white;
+  border-radius: 14px;
+
+  overflow: hidden;
+}
+
+.card > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card > .details {
+  padding: 30px;
+}
+
+.card > .details > #badge {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  color: var(--grayishBlue);
+}
+
+.card > .details > h1 {
+  padding-block: 24px;
+
+  font-family: var(--fraunces);
+  font-size: 32px;
+
+  line-height: 99%;
+  text-transform: capitalize;
+}
+
+.card > .details > .description {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--grayishBlue);
+  line-height: 160%;
+}
+
+.card > .details > .prices {
+  padding-block: 24px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card > .details > .prices > #current {
+  font-family: var(--fraunces);
+  font-size: 32px;
+  font-weight: 700;
+
+  color: var(--darkCyan);
+}
+
+.card > .details > .prices > #actual {
+  margin-left: 20px;
+
+  font-size: 14px;
+
+  color: var(--grayishBlue);
+  text-decoration: line-through;
+}
+
+.card > .details > button {
+  border: 0;
+  outline: 0;
+
+  padding-block: 16px;
+  width: 100%;
+
+  background-color: var(--darkCyan);
+  border-radius: 10px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  transition: background .2s ease;
+  cursor: pointer;
+}
+
+.card > .details > button:hover {
+  background-color: var(--veryDarkCyan);
+}
+
+.card > .details > button > img {
+  width: 16px;
+}
+
+@media screen and (max-width: 566px) {
+  .card {
+    margin: 0 auto;
+    
+    max-width: 380px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .card > img {
+    height: 280px;
+  }
+}
