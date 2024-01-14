@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --hankenGrotesk: "Hanken Grotesk", sans-serif;
+  --lightRed: hsl(0, 100%, 67%);
+  --orangeyYellow: hsl(39, 100%, 56%);
+  --greenTeal: hsl(166, 100%, 37%);
+  --cobaltBlue: hsl(234, 85%, 45%);
+  --lightSlateBlue: hsl(252, 100%, 67%);
+  --lightRoyalBlue: hsl(241, 81%, 54%);
+  --violetBlue: hsla(256, 72%, 46%, 1);
+  --persianBlue: hsla(241, 72%, 46%, 0);
+  --white: hsl(0, 0%, 100%);
+  --paleBlue: hsl(221, 100%, 96%);
+  --lightLavender: hsl(241, 100%, 89%);
+  --darkGrayBlue: hsl(224, 30%, 27%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--hankenGrotesk);
+}
+
+body {
+  background: var(--paleBlue);
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  padding-inline: 10px;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  max-width: 600px;
+  width: 100%;
+  height: fit-content;
+
+  border-radius: 24px;
+  background-color: var(--white);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  overflow: hidden;
+}
+
+.card > #result {
+  padding-block: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  
+  border-radius: 24px;
+  background: linear-gradient(to bottom, var(--lightSlateBlue), var(--lightRoyalBlue));
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 700;
+
+  color: var(--lightLavender);
+}
+
+.card > #result > .circle {
+  width: 150px;
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 100px;
+  background: linear-gradient(to bottom, hsla(256, 72%, 46%, 40%), hsla(241, 81%, 54%, 4%));
+}
+
+.card > #result > .circle > h1 {
+  font-size: 54px;
+  font-weight: 700;
+
+  color: var(--white);
+}
+
+.card > #result > .circle > p {
+  font-size: 16px;
+  font-weight: 500;
+
+  color: var(--lightLavender);
+}
+
+.card > #result > .review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.card > #result > .review > .rating {
+  font-weight: 600;
+  color: var(--paleBlue);
+}
+
+.card > #result > .review > .info {
+  padding-inline: 36px;
+  
+  font-weight: 400;
+  color: var(--lightLavender);
+  text-align: center;
+}
+
+.card > #summary {
+  padding: 30px;
+}
+
+.card > #summary > h3 {
+  color: var(--darkGrayBlue);
+}
+
+.card > #summary > .list {
+  padding-block: 20px;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card > #summary > .list > .item {
+  padding: 12px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+}
+
+.reaction {
+  background: hsla(0, 100%, 67%, 10%);
+  color: var(--lightRed);
+}
+
+.memory {
+  background: hsla(39, 100%, 56%, 10%);
+  color: var(--orangeyYellow);
+}
+
+.verbal {
+  background: hsla(166, 100%, 37%, 10%);
+  color: var(--greenTeal);
+}
+
+.visual {
+  background: hsla(234, 85%, 45%, 10%);
+  color: var(--cobaltBlue);
+}
+
+.card > #summary > .list > .item > .title {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.card > #summary > .list > .item > .average {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--darkGrayBlue);
+}
+
+.card > #summary > .list > .item > .average > span {
+  font-weight: 500;
+  color: hsla(224, 30%, 27%, 50%);
+}
+
+.card > #summary > button {
+  position: relative;
+
+  border: none;
+  outline: none;
+
+  margin-top: 10px;
+  padding-block: 12px;
+
+  width: 100%;
+
+  font-family: var(--hankenGrotesk);
+  font-size: 16px;
+
+  color: var(--white);
+
+  border-radius: 100px;
+  background: linear-gradient(to bottom, var(--darkGrayBlue), var(--darkGrayBlue));
+  transition: background .2s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.card > #summary > button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--lightSlateBlue), var(--lightRoyalBlue));
+  z-index: -1;
+  transition: all .2s ease;
+}
+
+
+.card > #summary > button:hover::after {
+  bottom: 0;
+}
+
+@media screen and (max-width: 480px){
+  .card {
+    grid-template-columns: 1fr;
+  }
+}
