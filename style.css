@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  --redHatDisplay: "Red Hat Display", sans-serif;
+  --paleBlue: hsl(225, 100%, 94%);
+  --brightBlue: hsl(245, 75%, 52%);
+  --veryPaleBlue: hsl(225, 100%, 98%);
+  --desaturatedBlue: hsl(224, 23%, 55%);
+  --darkBlue: hsl(223, 47%, 23%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--redHatDisplay);
+}
+
+body {
+  background-image: url(images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-color: var(--veryPaleBlue);
+  height: 100vh;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  margin: 0 auto;
+  margin-top: 10rem;
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+  height: fit-content;
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow: 1px 4px 10px var(--paleBlue);
+}
+
+.card > img {
+  width: 100%;
+}
+
+.card .details {
+  padding: 20px 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.card .details h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--darkBlue);
+}
+
+.card .details > p {
+  color: var(--desaturatedBlue);
+  text-align: center;
+}
+
+.plan {
+  padding: 18px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 14px;
+  background-color: var(--veryPaleBlue);
+}
+
+.plan img {
+  width: 38px;
+}
+
+.plan .info {
+  flex: 1;
+}
+
+#title {
+  color: var(--darkBlue);
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+#price {
+  font-size: 14px;
+  color: var(--desaturatedBlue);
+}
+
+.plan a {
+  color: var(--brightBlue);
+  font-size: 12px;
+  font-weight: 700;
+  transition: color .2s ease-in;
+}
+
+.plan a:hover {
+  color: hsl(245, 66%, 60%);
+  text-decoration: none;
+}
+
+#payment {
+  border: 0;
+  outline: 0;
+
+  padding-block: 10px;
+
+  width: 100%;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--paleBlue);
+
+  border-radius: 12px;
+  background-color: var(--brightBlue);
+  box-shadow: 0px 3px 5px 2px var(--paleBlue);
+  transition: background .2s ease-in;
+}
+
+#payment:hover {
+  background-color: hsl(245, 66%, 60%);
+}
+
+#cancel {
+  padding-block: 14px;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--desaturatedBlue);
+  transition: color .2s ease-in;
+}
+
+#cancel:hover {
+  color: var(--brightBlue);
+}
+
+.attribution {
+  display: none;
+  font-size: 11px; 
+  text-align: center; 
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (max-width: 400px) {
+  main {
+    padding-inline: 6px;
+  }
+
+  .card .details {
+    padding: 10px;
+  }
+}
